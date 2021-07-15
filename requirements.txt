@@ -1,0 +1,5 @@
+Django==3.2.5
+django-graphql-jwt==0.3.2
+graphene==3.0b7
+graphene-django==3.0.0b7
+django-graphql-auth

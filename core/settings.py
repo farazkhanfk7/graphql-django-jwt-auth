@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'graphene_django',
+    'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
+    'graphql_auth',
     'users',
 ]
 
@@ -70,6 +73,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
+AUTHENTICATION_BACKENDS = [
+    # 'graphql_jwt.backends.JSONWebTokenBackend', // removing jwt backend
+    # using graphql_auth which is wrapper around jwt
+    'graphql_auth.backends.GraphQLAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -126,3 +135,10 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.ExtendUser'
+
+GRAPHENE = {
+    'SCHEMA' : 'users.schema.schema',
+    'MIDDLEWARE': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ]
+}
