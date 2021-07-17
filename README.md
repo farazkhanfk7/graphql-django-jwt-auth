@@ -95,3 +95,25 @@ mutation {
   }
 }
 ```
+<br>
+
+> Update Account : 
+
+This time we'll have to add Authorization tokens to tell which user we want to update.
+Use any API testing client that supports GraphQL like **Insomnia** or **Postman**.
+
+* Login first and copy the token from Response.
+* Make mutation but add token in Authorization header as well :
+
+`AUTHORIZATION` : `JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJI.....`
+
+```
+mutation {
+  updateAccount(
+    firstName: "Faraz"
+  ) {
+    success,
+    errors
+  }
+}
+```
