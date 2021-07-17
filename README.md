@@ -1,4 +1,4 @@
-# GraphQL-Djnago-JWT-Authentication
+# GraphQL-Django-JWT-Authentication
 
 ![python](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue) 
 > JWT Authentication in Django using GraphQl. Used graphene, django-graphql-jwt and django-graphql-auth
@@ -71,6 +71,27 @@ mutation {
   verifyAccount(token: "eyJ1c2VybmFtZSI6Im5ld191c2VyIiwiYW") {
     success,
     errors
+  }
+}
+```
+
+<br>
+
+> Login : 
+
+```
+mutation {
+  tokenAuth(username: "batman", password: "killshot69") {
+    success,
+    errors,
+    unarchiving,
+    token,
+    refreshToken,
+    unarchiving,
+    user {
+      id,
+      username,
+    }
   }
 }
 ```

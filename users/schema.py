@@ -5,6 +5,7 @@ from graphql_auth import mutations
 class AuthMutation(graphene.ObjectType):
    register = mutations.Register.Field()
    verify_account = mutations.VerifyAccount.Field()
+   token_auth = mutations.ObtainJSONWebToken.Field()
 
 
 # user query for graphql is coming from here through graphql
