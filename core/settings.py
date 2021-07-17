@@ -150,6 +150,8 @@ GRAPHQL_JWT = {
         "graphql_auth.mutations.Register",
         "graphql_auth.mutations.VerifyAccount",
         "graphql_auth.mutations.ObtainJSONWebToken",
+        "graphql_auth.mutations.SendPasswordResetEmail",
+        "graphql_auth.mutations.PasswordReset",
     ],
     "JWT_VERIFY_EXPIRATION": True,
     "JWT_LONG_RUNNING_REFRESH_TOKEN": True

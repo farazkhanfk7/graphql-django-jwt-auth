@@ -3,6 +3,7 @@
 ![python](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue) 
 > JWT Authentication in Django using GraphQl. Used graphene, django-graphql-jwt and django-graphql-auth
 
+<a href="https://ibb.co/1MHvnWt"><img src="https://i.ibb.co/Lr4kP7X/Screenshot-from-2021-07-17-18-08-15.png" alt="Screenshot-from-2021-07-17-18-08-15" border="0"></a>
 
 ## Query Examples
 
@@ -111,6 +112,38 @@ Use any API testing client that supports GraphQL like **Insomnia** or **Postman*
 mutation {
   updateAccount(
     firstName: "Faraz"
+  ) {
+    success,
+    errors
+  }
+}
+```
+<br.>
+**Forgot Password ?**
+
+> Send Password Reset Email
+
+```
+mutation {
+  sendPasswordResetEmail(
+    email: "batman@email.com"
+  ) {
+    success,
+    errors
+  }
+}
+```
+
+And copy the url token from terminal. 
+
+> Password Reset 
+
+```
+mutation {
+  passwordReset(
+    token: "1eyJ1c2VybmFtZSI6InNreX...",
+    newPassword1: "deadshot69",
+    newPassword2: "deadshot69"
   ) {
     success,
     errors
