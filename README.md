@@ -118,7 +118,8 @@ mutation {
   }
 }
 ```
-<br.>
+<br>
+
 **Forgot Password ?**
 
 > Send Password Reset Email
