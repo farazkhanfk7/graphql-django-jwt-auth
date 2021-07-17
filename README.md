@@ -8,7 +8,7 @@
 
 > UserQuery : To get user data ( when using `graphql_auth` and `UserQuery` to build schema)
 
-```json
+```
 query{
   users{
     edges{
@@ -24,7 +24,7 @@ query{
 
 > MeQuery : To get user data ( when using `graphql_auth` and `MeQuery` to build schema)
 
-```json
+```
 query{
   me {
     username
@@ -34,9 +34,10 @@ query{
 }
 ```
 <br>
-> Register : To register user using GraphQL_auth and jwt
 
-```json
+>  Register : To register user using GraphQL_auth and jwt
+
+```
 mutation {
   register(
     email: "batman@gmail.com",
@@ -52,7 +53,8 @@ mutation {
 }
 ```
 <br>
-> Verify Account :
+
+>  Verify Account :
 
 A URL like this will be returned in terminal if you're using EMAIL_BACKENDS in settings.py
 
@@ -64,7 +66,7 @@ This token can be used to send a mutation query from frontend to verify the user
 
 Mutation Query : 
 
-```json
+```
 mutation {
   verifyAccount(token: "eyJ1c2VybmFtZSI6Im5ld191c2VyIiwiYW") {
     success,
