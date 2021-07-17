@@ -25,3 +25,20 @@ query{
   }
 }
 ```
+
+> Register : To register user using GraphQL_auth and jwt
+```
+mutation {
+  register(
+    email: "new_user@email.com",
+    username: "new_user",
+    password1: "killshot69",
+    password2: "killshot69",
+  ) {
+    success,
+    errors,
+    token,
+    refreshToken
+  }
+}
+```
